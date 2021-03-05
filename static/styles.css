@@ -38,6 +38,7 @@ ul a {
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
+    color: black;
 }
 
 .add-post-button {
@@ -66,7 +67,8 @@ form {
     border-radius: 3px;
 }
 
-input {
+input,
+textarea {
     display: block;
     width: 250px;
     margin: auto auto 10px;
@@ -74,7 +76,13 @@ input {
     border: 2px solid lightgrey;
 }
 
-input.invalid {
+textarea {
+    font-size: 12px;
+    height: 150px;
+}
+
+input.invalid,
+textarea.invalid {
     border: 2px solid red;
 }
 

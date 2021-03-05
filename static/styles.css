@@ -1,9 +1,5 @@
 table {
     border: 2px solid black;
-
-    max-width: 80%;
-    margin: auto;
-    margin-top: 100px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -42,4 +38,48 @@ ul a {
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
+}
+
+.add-post-button {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+.table-wrapper {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+form {
+    width: 300px;
+    margin: 200px auto auto;
+    padding: 40px 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+input {
+    display: block;
+    width: 250px;
+    margin: auto auto 10px;
+    font-size: 24px;
+    border: 2px solid lightgrey;
+}
+
+input.invalid {
+    border: 2px solid red;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 32px;
 }

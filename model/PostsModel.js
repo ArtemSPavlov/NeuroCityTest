@@ -9,6 +9,10 @@ class PostsModel{
         return this._posts;
     }
 
+    addNewPost(post){
+        this._posts.push(post);
+    }
+
     getSortedPosts(column){
         const sortableColumns = ['id', 'title', 'body'];
 
@@ -42,6 +46,11 @@ class PostsModel{
                 return post
             }
         })
+    }
+
+    _addNewPostId(){
+        const postsSortedById = this._posts.sort((a, b) => b.id - a.id);
+        return postsSortedById[0].id + 1;
     }
 }
 

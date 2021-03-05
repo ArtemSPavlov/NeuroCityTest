@@ -8,8 +8,8 @@ routes.get('/', controller.showPostsList)
 
 routes.delete('/', controller.removePost)
 
-routes.post('/', (req, res) => {
-    res.send('Create')
-})
+routes.get('/add-post', controller.newPostForm)
+
+routes.post('/', controller.createPost)
 
 module.exports = routes;

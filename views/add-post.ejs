@@ -1,0 +1,27 @@
+<%- include('./header.ejs'); %>
+
+<form id="createForm" action="/"  method="POST">
+    <h3 class="form-title">Add new user</h3>
+    <input
+    class="<% if(error && !post.userId) { %>
+        invalid
+    <% } %>"
+    type="number"
+    name="userId"
+    value=<%= post.userId %>>
+    <input
+    class="<% if(error && !post.title) { %>
+        invalid
+    <% } %>"
+    type="text"
+    name="title"
+    value=<%= post.title %>>
+    <input
+    class="<% if(error && !post.body) { %>
+        invalid
+    <% } %>"
+    type="text"
+    name="body"
+    value=<%= post.body %>>
+    <input type="submit"  value="Create">
+</form>

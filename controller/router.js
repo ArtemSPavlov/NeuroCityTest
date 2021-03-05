@@ -1,10 +1,10 @@
 const express = require('express');
 
+const controller = require('./controller');
+
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    res.send('Get')
-})
+routes.get('/', controller.showPostsList)
 
 routes.post('/', (req, res) => {
     res.send('Create')

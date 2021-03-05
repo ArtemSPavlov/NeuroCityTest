@@ -1,0 +1,38 @@
+<%- include('./header.ejs'); %>
+<body>
+<table>
+    <tr>
+        <th class="table-head-cell">
+            <div>userId</div>
+        </th>
+        <th class="table-head-cell">
+            <div>id</div>
+            <a href="/?sortBy=id">Sort by ID</a>
+        </th>
+        <th class="table-head-cell">
+            <div>title</div>
+            <a href="/?sortBy=title">Sort by TITLE</a>
+        </th>
+        <th class="table-head-cell">
+            <div>body</div>
+            <a href="/?sortBy=body">Sort by BODY</a>
+        </th>
+        <th class="table-head-cell"></th>
+    </tr>
+    <% posts.forEach(post => { %>
+        <tr>
+            <td><%= post.userId %></td>
+            <td><%= post.id %></td>
+            <td><%= post.title %></td>
+            <td><%= post.body %></td>
+            <td>
+                <ul>
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </td>
+        </tr>
+    <% }); %>
+</table>
+</body>
+</html>

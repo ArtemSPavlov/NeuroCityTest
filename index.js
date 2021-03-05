@@ -8,7 +8,9 @@ const PORT = 3000;
 const DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
 const app = express();
 
-app.use(routes)
+app.set('view engine', 'ejs');
+app.use(express.static('static'));
+app.use(routes);
 
 https.get(DATA_URL, (res) => {
 

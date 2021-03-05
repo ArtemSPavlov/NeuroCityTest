@@ -9,6 +9,10 @@ class PostsModel{
         return this._posts;
     }
 
+    addNewPost(post){
+        this._posts.push(post);
+    }
+
     getSortedPosts(column){
         const sortableColumns = ['id', 'title', 'body'];
 
@@ -28,7 +32,8 @@ class PostsModel{
     }
 
     findPostById(id){
-        return this._posts.find(el => el.id === id)
+        // console.log('Post ID: ', id);
+        return this._posts.find(el => el.id === +id)
     }
 
     deletePost(id){
@@ -37,11 +42,18 @@ class PostsModel{
     }
 
     updatePost(id, post){
-        this._posts = this._posts.forEach(el => {
-            if(el.id === id){
-                return post
+
+        this._posts = this._posts.map(el => {
+            if(el.id === +id){
+                return {...el, ...post};
             }
+            return el;
         })
+    }
+
+    _addNewPostId(){
+        const postsSortedById = this._posts.sort((a, b) => b.id - a.id);
+        return postsSortedById[0].id + 1;
     }
 }
 

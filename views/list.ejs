@@ -1,38 +1,41 @@
 <%- include('./header.ejs'); %>
 <body>
-<table>
-    <tr>
-        <th class="table-head-cell">
-            <div>userId</div>
-        </th>
-        <th class="table-head-cell">
-            <div>id</div>
-            <a href="/?sortBy=id">Sort by ID</a>
-        </th>
-        <th class="table-head-cell">
-            <div>title</div>
-            <a href="/?sortBy=title">Sort by TITLE</a>
-        </th>
-        <th class="table-head-cell">
-            <div>body</div>
-            <a href="/?sortBy=body">Sort by BODY</a>
-        </th>
-        <th class="table-head-cell"></th>
-    </tr>
-    <% posts.forEach(post => { %>
-        <tr>
-            <td><%= post.userId %></td>
-            <td><%= post.id %></td>
-            <td><%= post.title %></td>
-            <td><%= post.body %></td>
-            <td>
-                <ul>
-                    <li><a class="edit-button">Edit</a></li>
-                    <li><a data-user-id=<%= post.id %> class="delete-button">Delete</a></li>
-                </ul>
-            </td>
-        </tr>
-    <% }); %>
-</table>
+    <div class="table-wrapper">
+        <a class="add-post-button" href="/add-post">+ Add Post</a>
+        <table>
+            <tr>
+                <th class="table-head-cell">
+                    <div>user Id</div>
+                </th>
+                <th class="table-head-cell">
+                    <div>id</div>
+                    <a href="/?sortBy=id">Sort by ID</a>
+                </th>
+                <th class="table-head-cell">
+                    <div>title</div>
+                    <a href="/?sortBy=title">Sort by TITLE</a>
+                </th>
+                <th class="table-head-cell">
+                    <div>body</div>
+                    <a href="/?sortBy=body">Sort by BODY</a>
+                </th>
+                <th class="table-head-cell"></th>
+            </tr>
+            <% posts.forEach(post => { %>
+                <tr>
+                    <td><%= post.userId %></td>
+                    <td><%= post.id %></td>
+                    <td><%= post.title %></td>
+                    <td><%= post.body %></td>
+                    <td>
+                        <ul>
+                            <li><a href="/edit-post?postId=<%= post.id %>" class="edit-button">Edit</a></li>
+                            <li><a data-user-id=<%= post.id %> class="delete-button">Delete</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
 </body>
 </html>

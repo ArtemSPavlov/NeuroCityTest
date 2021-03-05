@@ -2,10 +2,13 @@ const express = require('express');
 const https = require('https');
 
 const postsModel = require('./model/PostsModel');
+const routes = require('./controller/router');
 
 const PORT = 3000;
 const DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
 const app = express();
+
+app.use(routes)
 
 https.get(DATA_URL, (res) => {
 

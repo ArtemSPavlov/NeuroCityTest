@@ -6,6 +6,8 @@ const routes = express.Router();
 
 routes.get('/', controller.showPostsList)
 
+routes.delete('/', controller.removePost)
+
 routes.post('/', (req, res) => {
     res.send('Create')
 })

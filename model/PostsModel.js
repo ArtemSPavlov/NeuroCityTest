@@ -32,7 +32,8 @@ class PostsModel{
     }
 
     deletePost(id){
-        this._posts.filter(el => el.id !== id)
+        this._posts = this._posts.filter(el => el.id !== +id);
+        return true;
     }
 
     updatePost(id, post){

@@ -27,8 +27,8 @@
             <td><%= post.body %></td>
             <td>
                 <ul>
-                    <li><a href="#">Edit</a></li>
-                    <li><a href="#">Delete</a></li>
+                    <li><a class="edit-button">Edit</a></li>
+                    <li><a data-user-id=<%= post.id %> class="delete-button">Delete</a></li>
                 </ul>
             </td>
         </tr>
